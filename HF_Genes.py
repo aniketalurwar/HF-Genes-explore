@@ -2,9 +2,6 @@ import streamlit as st
 
 import pandas as pd
 
-from gpt4all import GPT4All
-
-
 
 df = pd.read_csv(r'./121geneneighboursbyprotein.csv')
 
