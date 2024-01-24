@@ -81,6 +81,7 @@ config = Config(width=1050,
                 directed=True, 
                 physics=True, 
                 hierarchical=False,
+                collapsible=True,
                 # **kwargs
                 )
 
