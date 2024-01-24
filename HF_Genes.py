@@ -44,6 +44,8 @@ table_df.rename(columns = {'Gene':'Protein Name'}, inplace = True)
 
 st.dataframe(table_df)
 
+st.markdown("<h1 style='text-align: center; color: #0096FF;'>Knowledge Graph</h1>", unsafe_allow_html=True)
+
 nodes = []
 edges = []
 
