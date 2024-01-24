@@ -55,7 +55,7 @@ for k, v in plot_df.groupby('Gene'):
 for i in df_genes:
      nodes.append( Node(id=i, 
                    label=i, 
-                   size=25
+                   size=15
                    )
             ) # includes **kwargs
 df_nodes = dict()
@@ -64,7 +64,7 @@ for kk, vv in plot_df.groupby('Node'):
 for j in df_nodes:
      nodes.append( Node(id=j, 
                    #label=j, 
-                   size=25
+                   size=15
                    )
             ) # includes **kwargs
 for index, row in plot_df.iterrows():
