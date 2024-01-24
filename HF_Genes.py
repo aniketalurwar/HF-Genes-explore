@@ -1,6 +1,7 @@
 import streamlit as st
-
+from streamlit_agraph import agraph, Node, Edge, Config
 import pandas as pd
+st.set_page_config(layout="wide")
 
 
 df = pd.read_csv(r'./121geneneighboursbyprotein.csv')
@@ -42,3 +43,45 @@ table_df = plot_df[plot_df.Node == option1]
 table_df.rename(columns = {'Gene':'Protein Name'}, inplace = True) 
 
 st.dataframe(table_df)
+
+nodes = []
+edges = []
+
+df_genes = dict()
+for k, v in plot_df.groupby('Gene'):
+    df_genes[k] = v
+for i in df_genes:
+     nodes.append( Node(id=i, 
+                   label=i, 
+                   size=25
+                   )
+            ) # includes **kwargs
+df_nodes = dict()
+for kk, vv in plot_df.groupby('Node'):
+    df_nodes[kk] = vv
+for j in df_nodes:
+     nodes.append( Node(id=j, 
+                   label=j, 
+                   size=25
+                   )
+            ) # includes **kwargs
+for index, row in plot_df.iterrows():
+       
+       edges.append( Edge(source=row['Gene'], 
+                   label="--", 
+                   target=row['Node'], 
+                   # **kwargs
+                   ) 
+            ) 
+
+config = Config(width=1050,
+                height=1050,
+                directed=True, 
+                physics=True, 
+                hierarchical=False,
+                # **kwargs
+                )
+
+return_value = agraph(nodes=nodes, 
+                      edges=edges, 
+                      config=config)
