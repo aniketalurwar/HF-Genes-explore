@@ -63,7 +63,7 @@ for kk, vv in plot_df.groupby('Node'):
     df_nodes[kk] = vv
 for j in df_nodes:
      nodes.append( Node(id=j, 
-                   label=j, 
+                   #label=j, 
                    size=25
                    )
             ) # includes **kwargs
