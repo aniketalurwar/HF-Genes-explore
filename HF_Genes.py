@@ -48,14 +48,12 @@ st.markdown("<h1 style='text-align: center; color: #0096FF;'>Knowledge Graph per
 
 plot_df1=plot_df
 
-col1, col2 = st.columns(2)
 
-with col1:
-    filt = st.checkbox("Filter by Subtype?")
+filt = st.checkbox("Filter by Subtype?")
 
-with col2:
-    if filt:
-        plot_df1=table_df
+
+if filt:
+    plot_df1=table_df
 
 nodes = []
 edges = []
