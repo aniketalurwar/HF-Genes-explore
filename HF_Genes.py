@@ -55,45 +55,45 @@ filt = st.checkbox("Filter by Subtype?")
 if filt:
     plot_df1=table_df
 
-nodes = []
-edges = []
+    nodes = []
+    edges = []
 
-df_genes = dict()
-for k, v in plot_df1.groupby('Gene'):
-    df_genes[k] = v
-for i in df_genes:
-     nodes.append( Node(id=i, 
-                   label=i, 
-                   size=15
-                   )
-            ) # includes **kwargs
-df_nodes = dict()
-for kk, vv in plot_df1.groupby('Node'):
-    df_nodes[kk] = vv
-for j in df_nodes:
-     nodes.append( Node(id=j, 
-                   #label=j, 
-                   size=15
-                   )
-            ) # includes **kwargs
-for index, row in plot_df.iterrows():
-       
-       edges.append( Edge(source=row['Gene'], 
-                   label="--", 
-                   target=row['Node'], 
-                   # **kwargs
-                   ) 
-            ) 
+    df_genes = dict()
+    for k, v in plot_df1.groupby('Gene'):
+        df_genes[k] = v
+    for i in df_genes:
+        nodes.append( Node(id=i, 
+                    label=i, 
+                    size=15
+                    )
+                ) # includes **kwargs
+    df_nodes = dict()
+    for kk, vv in plot_df1.groupby('Node'):
+        df_nodes[kk] = vv
+    for j in df_nodes:
+        nodes.append( Node(id=j, 
+                    #label=j, 
+                    size=15
+                    )
+                ) # includes **kwargs
+    for index, row in plot_df.iterrows():
+        
+        edges.append( Edge(source=row['Gene'], 
+                    label="--", 
+                    target=row['Node'], 
+                    # **kwargs
+                    ) 
+                ) 
 
-config = Config(width=1050,
-                height=1050,
-                directed=True, 
-                #physics=True, 
-                hierarchical=False,
-                collapsible=True,
-                # **kwargs
-                )
+    config = Config(width=1050,
+                    height=1050,
+                    directed=True, 
+                    #physics=True, 
+                    hierarchical=False,
+                    collapsible=True,
+                    # **kwargs
+                    )
 
-return_value = agraph(nodes=nodes, 
-                      edges=edges, 
-                      config=config)
+    return_value = agraph(nodes=nodes, 
+                        edges=edges, 
+                        config=config)
