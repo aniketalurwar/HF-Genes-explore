@@ -44,14 +44,14 @@ table_df.rename(columns = {'Gene':'Protein Name'}, inplace = True)
 
 st.dataframe(table_df)
 
-html_str = f""" <h1 style='text-align: center; color: #0096FF;'> Knowledge Graph by {option} Option </h1> """
+html_str = f""" <h1 style='text-align: center; color: #0096FF;'> Knowledge Graph by {option} </h1> """
 
 st.markdown(html_str, unsafe_allow_html=True)
 
 plot_df1=plot_df
 
 
-filt = st.checkbox(f"Filter by {option1}?")
+filt = st.checkbox(f"Filter by {option1} selected above?")
 
 
 if filt:
