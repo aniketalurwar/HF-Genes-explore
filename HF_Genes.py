@@ -46,6 +46,8 @@ st.dataframe(table_df)
 
 st.markdown("<h1 style='text-align: center; color: #0096FF;'>Knowledge Graph per Type</h1>", unsafe_allow_html=True)
 
+plot_df1=plot_df
+
 col1, col2 = st.columns(2)
 
 with col1:
