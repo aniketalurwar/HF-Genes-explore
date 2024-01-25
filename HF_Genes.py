@@ -35,7 +35,7 @@ st.bar_chart(res,x="Node", y="protein_count", color="protein_count",)
 
 
 option1 = st.selectbox(
-'Please select your Sub Type:',
+f'Please select {option} Type:',
 plot_df['Node'].unique())
 
 table_df = plot_df[plot_df.Node == option1]
