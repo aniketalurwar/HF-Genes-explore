@@ -53,7 +53,7 @@ filt = st.checkbox("Filter by Subtype?")
 
 
 if filt:
-    plot_df1.Node == option1
+    plot_df1[plot_df1.Node == option1]
 
     nodes = []
     edges = []
