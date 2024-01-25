@@ -55,37 +55,37 @@ filt = st.checkbox("Filter by Subtype?")
 if filt:
     plot_df1[plot_df1.Node == option1]
 
-    nodes = []
-    edges = []
+nodes = []
+edges = []
 
-    df_genes = dict()
-    for k, v in plot_df1.groupby('Gene'):
+df_genes = dict()
+for k, v in plot_df1.groupby('Gene'):
         df_genes[k] = v
-    for i in df_genes:
+for i in df_genes:
         nodes.append( Node(id=i, 
                     label=i, 
                     size=15
                     )
                 ) # includes **kwargs
-    df_nodes = dict()
-    for kk, vv in plot_df1.groupby('Node'):
+df_nodes = dict()
+for kk, vv in plot_df1.groupby('Node'):
         df_nodes[kk] = vv
-    for j in df_nodes:
+for j in df_nodes:
         nodes.append( Node(id=j, 
                     #label=j, 
                     size=15
                     )
                 ) # includes **kwargs
-    for index, row in plot_df.iterrows():
+for index, row in plot_df.iterrows():
         
-        edges.append( Edge(source=row['Gene'], 
+    edges.append( Edge(source=row['Gene'], 
                     label="--", 
                     target=row['Node'], 
                     # **kwargs
                     ) 
                 ) 
 
-    config = Config(width=1050,
+config = Config(width=1050,
                     height=1050,
                     directed=True, 
                     #physics=True, 
@@ -94,6 +94,6 @@ if filt:
                     # **kwargs
                     )
 
-    return_value = agraph(nodes=nodes, 
+return_value = agraph(nodes=nodes, 
                         edges=edges, 
                         config=config)
