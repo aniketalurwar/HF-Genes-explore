@@ -46,11 +46,20 @@ st.dataframe(table_df)
 
 st.markdown("<h1 style='text-align: center; color: #0096FF;'>Knowledge Graph per Type</h1>", unsafe_allow_html=True)
 
+col1, col2 = st.columns(2)
+
+with col1:
+    filt = st.checkbox("Filter by Subtype?")
+
+with col2:
+    if filt:
+        plot_df1=table_df
+
 nodes = []
 edges = []
 
 df_genes = dict()
-for k, v in plot_df.groupby('Gene'):
+for k, v in plot_df1.groupby('Gene'):
     df_genes[k] = v
 for i in df_genes:
      nodes.append( Node(id=i, 
@@ -59,7 +68,7 @@ for i in df_genes:
                    )
             ) # includes **kwargs
 df_nodes = dict()
-for kk, vv in plot_df.groupby('Node'):
+for kk, vv in plot_df1.groupby('Node'):
     df_nodes[kk] = vv
 for j in df_nodes:
      nodes.append( Node(id=j, 
