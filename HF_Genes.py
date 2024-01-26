@@ -31,7 +31,13 @@ html_str = f""" <h1 style='text-align: center; color: #0096FF;'> Explore {option
 
 st.markdown(html_str, unsafe_allow_html=True)
 
-st.bar_chart(res,x="Node", y="protein_count", color="protein_count",)
+if option == 'Compound':
+      st.dataframe(plot_df)
+else :
+    st.bar_chart(res,x="Node", y="protein_count", color="protein_count",)
+
+if option == 'Compound':
+      st.dataframe(plot_df)
 
 
 option1 = st.selectbox(
@@ -95,7 +101,9 @@ config = Config(width=1050,
                     collapsible=True,
                     # **kwargs
                     )
-
-return_value = agraph(nodes=nodes, 
+if option == 'Compound':
+      return_value = 0
+else:
+    return_value = agraph(nodes=nodes, 
                         edges=edges, 
                         config=config)
