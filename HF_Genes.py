@@ -45,7 +45,7 @@ table_df = plot_df[plot_df.Node == option1]
 
 table_df.rename(columns = {'Gene':'Protein Name'}, inplace = True) 
 
-st.dataframe(table_df)
+st.dataframe(table_df,hide_index=True)
 
 html_str = f""" <h1 style='text-align: center; color: #0096FF;'> Knowledge Graph by {option} </h1> """
 
