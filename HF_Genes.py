@@ -36,8 +36,6 @@ if option == 'Compound':
 else :
     st.bar_chart(res,x="Node", y="protein_count", color="protein_count",)
 
-if option == 'Compound':
-      st.dataframe(plot_df)
 
 
 option1 = st.selectbox(
