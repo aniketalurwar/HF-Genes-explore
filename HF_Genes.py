@@ -32,7 +32,7 @@ html_str = f""" <h1 style='text-align: center; color: #0096FF;'> Explore {option
 st.markdown(html_str, unsafe_allow_html=True)
 
 if option == 'Compound':
-      ff=0#st.dataframe(plot_df)
+    st.dataframe(plot_df)
 else :
     st.bar_chart(res,x="Node", y="protein_count", color="protein_count",)
 
