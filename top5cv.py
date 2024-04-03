@@ -32,7 +32,7 @@ df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
             nodes.append( Node(id=df_genes[i], 
                         label=df_genes[i], 
-                        size=25,
+                        size=50,
                         shape="diamond",
                         color='#00008B'
                         )
@@ -46,7 +46,7 @@ for index, row in df_disease.iterrows():
 #for j in df_disease:
             nodes.append( Node(id=row['name'], 
                         label=row['name'], 
-                        size=10 * row['count'],
+                        size=20 * row['count'],
                         shape="square",
                         color='#bf9b30'
                         )
