@@ -12,7 +12,7 @@ final_vd = pd.read_csv(r'./final_top5.csv')
 
 with st.sidebar: 
     option = st.selectbox(
-    'Please select your Type:',
+    'Please select CV Disease Type:',
     ('CVA','IHD','CM','ARR','VD','CHD'))
 
 final_coll = final_vd[final_vd.Condition == option]
