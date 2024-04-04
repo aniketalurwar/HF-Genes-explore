@@ -27,6 +27,10 @@ with st.sidebar:
     color_square = st.text_input(
     'Disease Color:','#bf9b30')
 
+with st.sidebar: 
+    color_circle = st.text_input(
+    'CV Color:','#00FFFF')
+
 nodes = []
 edges = []
 #final_genes = pd.DataFrame(final_arr.Gene.unique(),columns=['Nodes'])
@@ -64,7 +68,7 @@ for k in df_condition:
                         label=f"              {option}              ", 
                         size=200,
                         shape="circle",
-                        color='#00FFFF'
+                        color=color_circle
                         )
                     ) # includes **kwargs
 
