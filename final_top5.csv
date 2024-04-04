@@ -49,3 +49,16 @@ P09493,TPM1_HUMAN,oral squamous cell carcinoma,Disease,VD
 P78347,GTF2I_HUMAN,liver cancer,Disease,VD
 O00151,PDLI1_HUMAN,renal cell carcinoma,Disease,VD
 O00151,PDLI1_HUMAN,melanoma,Disease,VD
+P36382,,,Disease,ARR
+Q92736,,,Disease,ARR
+O14958,,,Disease,ARR
+P01241,,,Disease,CHD
+P35556,,,Disease,CHD
+B4DM00,,,Disease,CVA
+P20783,,,Disease,CVA
+Q9UIG0,,,Disease,VD
+P08473,,,Disease,CM
+P11532,,,Disease,CM
+P11597,,,Disease,IHD
+P11150,,,Disease,IHD
+
