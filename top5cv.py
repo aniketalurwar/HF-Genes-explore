@@ -19,7 +19,13 @@ final_coll = final_vd[final_vd.Condition == option]
 
 final_arr_short= final_coll
 
+with st.sidebar: 
+    color_diamond = st.text_input(
+    'Protein Color:','#00008B')
 
+with st.sidebar: 
+    color_square = st.text_input(
+    'Disease Color:','#bf9b30')
 
 nodes = []
 edges = []
@@ -34,7 +40,7 @@ for i in df_genes:
                         label=df_genes[i], 
                         size=40,
                         shape="diamond",
-                        color='#00008B'
+                        color=color_diamond
                         )
                     ) # includes **kwargs
 #df_disease = dict()
@@ -48,7 +54,7 @@ for index, row in df_disease.iterrows():
                         label=row['name'], 
                         size=15 * row['count'],
                         shape="square",
-                        color='#bf9b30'
+                        color=color_square
                         )
                     ) # includes **kwargs
 df_condition = dict()
