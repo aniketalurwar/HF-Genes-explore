@@ -51,6 +51,7 @@ for i in df_genes:
 #df_disease=dict(enumerate(final_arr.neighbour_name.unique()))
 df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
+df_disease = df_disease[df_disease.name != 'na']
 for index, row in df_disease.iterrows():
 #    print(row['count'])
 #for j in df_disease:
@@ -73,6 +74,7 @@ for k in df_condition:
                     ) # includes **kwargs
 
 df_connections = final_arr_short.filter(items=['Protein', 'neighbour_name']).drop_duplicates()
+df_connections = df_connections[df_connections.neighbour_name != 'na']
 for index, row in df_connections.iterrows():           
         edges.append( Edge(source=row['Protein'], 
                         label="--", 
